@@ -1,7 +1,7 @@
 "use client";
 import * as React from "react";
 
-import { LogIn, LogOut } from "lucide-react";
+import { Hexagon, LogIn, LogOut } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggler } from "@/components/theme-toggler";
 import { signOut } from "@/lib/auth-client";
@@ -31,7 +31,10 @@ const Navbar: React.FC<NavbarProps> = ({ user }) => {
 
   return (
     <nav className="py-6 px-6 flex items-center justify-between">
-      <div className="text-2xl font-bold animate-fade-in">nexora</div>
+      <div className="flex items-center gap-x-2 animate-fade-in">
+        <Hexagon className="size-6" />
+        <span className="inline-block text-2xl font-bold">nexora</span>
+      </div>
 
       <div className="flex items-center space-x-2 animate-fade-in [animation-delay:200ms]">
         <Button
