@@ -32,7 +32,7 @@ export default async function Home() {
 
           <div className="animate-fade-in [animation-delay:400ms]">
             <a
-              href="/https://github.com/subhamBharadwaz/nexora"
+              href="https://github.com/subhamBharadwaz/nexora"
               className={cn(buttonVariants({ size: "lg" }))}
             >
               Get Started
@@ -98,7 +98,7 @@ export default async function Home() {
               not your infrastructure.
             </p>
             <a
-              href="/https://github.com/subhamBharadwaz/nexora"
+              href="https://github.com/subhamBharadwaz/nexora"
               className={cn(buttonVariants({ size: "lg" }), "px-8")}
             >
               Start Building Now
