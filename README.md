@@ -13,7 +13,6 @@ A production-ready Next.js boilerplate with App Router, Drizzle ORM, Supabase, B
 - 🧹 **Code Quality** - Biome for linting and formatting
 - 🎨 **UI Components** - shadcn/ui for beautiful, accessible components
 - 🌓 **Dark Mode** - Built-in theme toggling
-- 📱 **Responsive** - Mobile-first design approach
 - 🔍 **SEO Optimized** - Pre-configured for search engines
 
 ## Getting Started

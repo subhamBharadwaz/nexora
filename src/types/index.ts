@@ -8,3 +8,19 @@ export type SiteConfig = {
     github: string;
   };
 };
+
+export type UserSession = {
+  session: {
+    id: string;
+    createdAt: Date;
+    updatedAt: Date;
+    userId: string;
+    expiresAt: Date;
+    token: string;
+    ipAddress?: string | null;
+    userAgent?: string | null;
+  };
+  user: {
+    id: string;
+  };
+};

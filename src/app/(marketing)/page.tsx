@@ -4,11 +4,17 @@ import { auth } from "@/lib/auth";
 import { headers } from "next/headers";
 import Navbar from "@/components/nav";
 import { cn } from "@/lib/utils";
+import { getUserSubscription } from "@/server/actions/stripe";
+import { CancelSubscriptionButton } from "@/components/cancel-subscription-button";
+import { SubscribeButton } from "@/components/subscribe-button";
 
 export default async function Home() {
   const user = await auth.api.getSession({
     headers: await headers(),
   });
+
+  const subData = await getUserSubscription();
+  const isSubscribed = subData?.subscription;
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-secondary/30">
@@ -30,13 +36,19 @@ export default async function Home() {
             integration.
           </p>
 
-          <div className="animate-fade-in [animation-delay:400ms]">
+          <div className="animate-fade-in  [animation-delay:400ms] flex items-center justify-center gap-x-4">
             <a
               href="https://github.com/subhamBharadwaz/nexora"
               className={cn(buttonVariants({ size: "lg" }))}
             >
               Get Started
             </a>
+
+            {isSubscribed ? (
+              <CancelSubscriptionButton user={user} />
+            ) : (
+              <SubscribeButton user={user} />
+            )}
           </div>
         </div>
 
