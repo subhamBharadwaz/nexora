@@ -5,6 +5,7 @@ import { Hexagon, LogIn, LogOut } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggler } from "@/components/theme-toggler";
 import { signOut } from "@/lib/auth-client";
+import { useRouter } from "next/navigation";
 import { UserSession } from "@/types";
 
 type NavbarProps = {
@@ -12,6 +13,8 @@ type NavbarProps = {
 };
 
 const Navbar: React.FC<NavbarProps> = ({ user }) => {
+  const router = useRouter();
+
   return (
     <nav className="py-6 px-6 flex items-center justify-between">
       <div className="flex items-center gap-x-2 animate-fade-in">
@@ -27,8 +30,9 @@ const Navbar: React.FC<NavbarProps> = ({ user }) => {
           onClick={async () => {
             if (user) {
               await signOut();
+              router.refresh();
             } else {
-              return null;
+              router.push("/sign-in");
             }
           }}
         >
